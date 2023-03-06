@@ -1,32 +1,27 @@
-/**
-* _strspn - Gets the length of a prefix substring.
-* @s: The string to be searched.
-* @accept: The prefix to be measured.
-*
-* Return: The number of bytes in s which
-* consist only of bytes from accept.
+/*
+* File: 2-strchr.c
+* Auth: learner sam
 */
-unsigned int _strspn(char *s, char *accept)
+
+#include "main.h"
+
+/**
+* _strchr - Locates a character in a string.
+* @s: The string to be searched.
+* @c: The character to be located.
+*
+* Return: If c is found - a pointer to the first occurence.
+* If c is not found - NULL.
+*/
+char *_strchr(char *s, char c)
 {
-unsigned int bytes = 0;
 int index;
 
-while (*s)
+for (index = 0; s[index] >= '\0'; index++)
 {
-for (index = 0; accept[index]; index++)
-{
-if (*s == accept[index])
-{
-bytes++;
-break;
+if (s[index] == c)
+return (s + index);
 }
 
-else if (accept[index + 1] == '\0')
-return (bytes);
-}
-
-s++;
-}
-
-return (bytes);
+return ('\0');
 }
