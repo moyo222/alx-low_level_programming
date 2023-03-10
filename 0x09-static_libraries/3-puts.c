@@ -6,12 +6,12 @@
 
 /**
 * _puts - prints a string to stdout
-* @str: the string to be printed
+* @s: the string to be printed
 */
 
-void _puts(char *str)
+void _puts(char *s)
 {
-puts("\"Programming is like building a multilingual puzzle");
-return (0);
+
+puts(s);
 }
 
